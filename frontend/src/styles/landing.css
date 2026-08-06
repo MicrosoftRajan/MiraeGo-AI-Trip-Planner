@@ -1,0 +1,95 @@
+/* Gilora landing — restrained premium dark theme */
+.landing-root {
+  --lp-bg: #0d0f12;
+  --lp-surface: #16191d;
+  --lp-surface-strong: #1c2025;
+  --lp-primary: #6a52e0;
+  --lp-accent: #8b95a7;
+  --lp-text: #f5f7fa;
+  --lp-muted: #a2aab7;
+  --lp-border: rgb(255 255 255 / 0.09);
+  --font-lp-display: "Geist Variable", ui-sans-serif, system-ui, sans-serif;
+  --font-lp-body: "Geist Variable", ui-sans-serif, system-ui, sans-serif;
+
+  position: relative;
+  min-height: 100dvh;
+  overflow-x: clip;
+  color: var(--lp-text);
+  background: var(--lp-bg);
+  font-family: var(--font-lp-body);
+  -webkit-font-smoothing: antialiased;
+  color-scheme: dark;
+}
+
+.landing-root ::selection {
+  background: color-mix(in srgb, var(--lp-primary) 40%, transparent);
+  color: #fff;
+}
+
+.landing-root :focus-visible {
+  outline: 2px solid color-mix(in srgb, var(--lp-primary) 55%, white);
+  outline-offset: 3px;
+}
+
+.lp-display {
+  font-family: var(--font-lp-display);
+}
+
+.lp-surface {
+  background: var(--lp-surface);
+  border: 1px solid var(--lp-border);
+}
+
+.lp-skeleton {
+  background: linear-gradient(
+    90deg,
+    rgb(255 255 255 / 0.04) 0%,
+    rgb(255 255 255 / 0.1) 50%,
+    rgb(255 255 255 / 0.04) 100%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.6s ease-in-out infinite;
+}
+
+.lp-section-label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--lp-muted);
+}
+
+.landing-root .lp-section {
+  padding-top: clamp(5rem, 8vw, 8rem);
+  padding-bottom: clamp(5rem, 8vw, 8rem);
+}
+
+.landing-root .lp-card {
+  border: 1px solid var(--lp-border);
+  background: var(--lp-surface);
+  border-radius: 0.9rem;
+}
+
+.landing-root .lp-card:hover {
+  border-color: rgb(255 255 255 / 0.16);
+}
+
+.landing-root .lp-elevated {
+  background: var(--lp-surface-strong);
+  border: 1px solid var(--lp-border);
+  border-radius: 1rem;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .landing-root *,
+  .landing-root *::before,
+  .landing-root *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  .landing-root {
+    scroll-behavior: auto;
+  }
+}

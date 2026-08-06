@@ -1,4 +1,5 @@
 import { fetchJson } from './client'
+import { apiUrl } from './config'
 import { ApiError } from '../utils/errors'
 
 /**
@@ -34,7 +35,7 @@ export async function createTrip(payload, options = {}) {
     prompt: payload.prompt ?? '',
   }
 
-  const data = await fetchJson('/api/trip', {
+  const data = await fetchJson(apiUrl('/api/trip'), {
     method: 'POST',
     body,
     signal: options.signal,
